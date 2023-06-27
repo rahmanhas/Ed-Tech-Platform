@@ -92,7 +92,7 @@ const AddNewCourse = () => {
                         </div>
                     </div>
                 </div>
-                <div className="form-control mt-6">
+                <div className="form-control m-6">
                     <input className='btn btn-primary' type="submit" value="Submit" />
                 </div>
             </Form>

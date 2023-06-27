@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tkwant/react-steps": "^1.0.0",
+    "firebase": "^9.23.0",
     "formik": "^2.4.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
