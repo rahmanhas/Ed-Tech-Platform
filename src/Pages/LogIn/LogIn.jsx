@@ -59,7 +59,7 @@ const LogIn = () => {
                                     </label>
                                 </div>
                                 <div className='flex flex-col items-center'>
-                                    <input type="email" placeholder="Enter Email Address" name="email" className="input input-bordered w-800 h-[72px]" required />
+                                    <input type="email" placeholder="Enter Email Address" name="email" className="input border-1 border-black w-800 h-[72px]" required />
                                 </div>
                             </div>
                             <div className="form-control flex justify-center items-center">
@@ -69,7 +69,7 @@ const LogIn = () => {
                                     </label>
                                 </div>
                                 <div className='flex flex-col items-start'>
-                                    <input type="password" placeholder="Enter Password" name="password" className="input input-bordered w-800 h-[72px]" required />
+                                    <input type="password" placeholder="Enter Password" name="password" className="input border-1 border-black w-800 h-[72px]" required />
                                 </div>
 
                             </div>
