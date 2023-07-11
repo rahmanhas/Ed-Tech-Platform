@@ -33,8 +33,10 @@ const LogIn = () => {
                 console.log(result);
                 const token = result.data.token
                 const position = result.data.position
+                const name = result.data.full_name
                 localStorage.setItem('access-token', token);
                 localStorage.setItem('position', position);
+                localStorage.setItem('name', name);
                 dispatch(saveUserData(result.data));
 
                 navigate("/dashboard/dashboard")

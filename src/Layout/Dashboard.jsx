@@ -1,15 +1,17 @@
 import React from 'react';
 import LeftNav from '../Component/LeftNav';
 import { Outlet } from 'react-router-dom';
+import TopNAv from '../Component/TopNAv';
 
 const Dashboard = () => {
     return (
-        <div className='flex justify-center items-center'>
-            <div className='w-1/5'>
-            <LeftNav></LeftNav>
+        <div className='flex justify-center items-center max-w-7xl'>
+            <div className='w-[300px] h-[1024px]'>
+                <LeftNav></LeftNav>
             </div>
-            <div className='w-4/5'>
-            <Outlet></Outlet>
+            <div className='custom-width'>
+                <TopNAv></TopNAv>
+                <Outlet></Outlet>
             </div>
         </div>
     );
