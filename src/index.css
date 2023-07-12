@@ -16,3 +16,7 @@
     background-color: #5e8fd6;
     border-radius: 8px; 
   }
+  .progress-primary::-moz-progress-bar {
+    --tw-bg-opacity: 1;
+    background-color: hsla(360 / var(--tw-bg-opacity), 100%, 50%, 1);
+}

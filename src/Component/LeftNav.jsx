@@ -16,7 +16,7 @@ const LeftNav = () => {
         navigate("/login")
     }
     return (
-        <div className='custom-gradient min-h-[100vh] max-h-full flex flex-col text-2xl px-[25px] text-white'>
+        <div className='custom-gradient min-h-[100vh] max-h-full flex flex-col text-2xl px-[25px] text-white fixed left-0'>
             <div className='flex justify-between items-center h-[83px] pl-5 pr-3'>
                 <div className='flex justify-center items-center gap-5'>
                     <img className='text-white h-7 w-7' src={logo} alt="" />

@@ -8,7 +8,7 @@ const TopNav = () => {
     const name = localStorage.getItem('name')
     const position = localStorage.getItem('position')
   return (
-    <div className='w-[1620px] bg-[#6078EA] fixed top-0 h-[100px] flex justify-between items-center px-[100px] py-[22px]'>
+    <div className='w-[1620px] bg-[#6078EA] fixed top-0 left-[300px] h-[100px] flex justify-between items-center px-[100px] py-[22px]'>
       <div className=''>
         <div
           className='h-[56px] w-[1000px] bg-[#F5F5F5] rounded-lg flex items-center pl-4'

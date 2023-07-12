@@ -4,6 +4,9 @@ import i1 from '../../assets/1.svg'
 import i2 from '../../assets/2.svg'
 import i3 from '../../assets/3.svg'
 import i4 from '../../assets/4.svg'
+import arrow from '../../assets/arrow.svg'
+import ProgressBar from './ProgressBar';
+
 const DashboardDetails = () => {
     const [dashboardInformation, setDashboardInformation] = useState([])
     var token = localStorage.getItem('access-token');
@@ -28,33 +31,39 @@ const DashboardDetails = () => {
     }, [])
 
 
-
     return (
-        <div>
-            <div className='grid grid-cols-2 lg:grid-cols-4 gap-5 m-5 justify-center items-center'>
-                {
-                    dashboardInformation?.map(elements => <>
-                        <div className="card w-80 bg-base-100 shadow-xl">
-                            <div className="card-body">
-                                <div className='flex justify-start items-center gap-4'>
-                                    <img className='h-12 w-12' src={elements.id === 1 ? i1 : elements.id === 2 ? i2 : elements.id === 3 ? i3 : elements.id === 4 ? i4 : ''} alt="" />
-                                    <div>
-                                        <h2 className="card-title font-semibold text-2xl">{elements?.total}</h2>
-                                        <p className='text-sm text-[#767278]'>{elements.title}</p>
-                                    </div>
-                                </div>
-                                <div className='inline-flex justify-center items-center gap-3 w-[200px] h-1 pt-2 rounded-2xl'>
-                                    <progress className="progress progress-[#4C6FFF] w-44"  value={(elements?.total * 100 / elements?.progress)} max="100"></progress>
-                                    <p>{Math.ceil(elements?.total * 100 / elements?.progress)} %</p>
+        <div className='w-[1620px] flex justify-center items-start mt-[45px] gap-8 mx-auto'>
+            {
+                dashboardInformation?.map(elements => <>
+                    <div className="card w-[358px] gap-2 h-[200px] bg-base-100 " style={{boxShadow: `2px 4px 16px rgba(0, 0, 0, 0.16)`}}>
+                        <div className="card-body justify-between">
+                            <div className='flex justify-start items-center gap-4 mb-10'>
+                                <img className='h-12 w-12' src={elements.id === 1 ? i1 : elements.id === 2 ? i2 : elements.id === 3 ? i3 : elements.id === 4 ? i4 : ''} alt="" />
+                                <div>
+                                    <h2 className="card-title font-semibold text-2xl">{elements?.total}</h2>
+                                    <p className='text-sm text-[#767278]'>{elements.title}</p>
                                 </div>
                             </div>
+                            <div>
+
+                                { elements.progress >0 &&
+                                    <ProgressBar data={elements?.total * 100 / elements?.progress} ></ProgressBar>
+                                }
+                                { elements.progress === '' &&
+                                    <div className='flex justify-start items-center gap-5'>
+                                        <h1 className='font-medium text-sm text-[#4C6FFF]'>View Courses</h1>
+                                        <img className='w-[11px] h-[6px]' src={arrow} alt="" />
+                                    </div>
+                                }
+
+                            </div>
                         </div>
-
-                    </>)
-                }
-            </div>
-
+                    </div>
+                </>)
+            }
         </div>
+
+
     );
 };
 

@@ -5,13 +5,15 @@ import TopNAv from '../Component/TopNAv';
 
 const Dashboard = () => {
     return (
-        <div className='flex justify-center items-center max-w-7xl'>
+        <div className='flex justify-center items-center'>
             <div className='w-[300px] h-[1024px]'>
                 <LeftNav></LeftNav>
             </div>
             <div className='custom-width'>
                 <TopNAv></TopNAv>
-                <Outlet></Outlet>
+                <div className='fixed left-[300px] top-[100px] right-0 w-[1620px]'>
+                    <Outlet></Outlet>
+                </div>
             </div>
         </div>
     );
