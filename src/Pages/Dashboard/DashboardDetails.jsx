@@ -9,6 +9,7 @@ import ProgressBar from './ProgressBar';
 
 const DashboardDetails = () => {
     const [dashboardInformation, setDashboardInformation] = useState([])
+    const [dashboardGraphInformation, setDashboardGraphInformation] = useState([])
     var token = localStorage.getItem('access-token');
     var position = localStorage.getItem('position');
     useEffect(() => {
@@ -24,8 +25,30 @@ const DashboardDetails = () => {
         fetch("http://18.136.192.25:5000/api/v1/dashboard/statics", requestOptions)
             .then(response => response.json())
             .then(result => {
-                console.log(result)
                 setDashboardInformation(result.statics)
+            })
+            .catch(error => console.log('error', error));
+    }, [])
+    useEffect(() => {
+        const time_period = "monthly"
+        var raw = {
+            time_period
+        }
+        var requestOptions = {
+            method: 'POST',
+            headers: {
+                // 'Content-Type': 'application/json',
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(raw),
+            redirect: 'follow',
+        };
+
+        fetch("http://18.136.192.25:5000/api/v1/dashboard/chart", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+                setDashboardGraphInformation(result.progress)
             })
             .catch(error => console.log('error', error));
     }, [])

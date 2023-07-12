@@ -10,7 +10,7 @@ import logout from '../assets/logout.svg'
 const LeftNav = () => {
     const navigate = useNavigate();
     const position = localStorage.getItem('position')
-    console.log(position);
+    
     const handlelogOut = event => {
         localStorage.clear();
         navigate("/login")

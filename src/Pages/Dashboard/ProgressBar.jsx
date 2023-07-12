@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ProgressBar = ({data}) => {
-    console.log(data);
     const x = Math.ceil(data)
     const y = 100-x;
     return (
